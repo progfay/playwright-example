@@ -1,14 +1,14 @@
-const { chromium } = require('playwright')
+import { chromium } from 'playwright'
 
-async function main() {
+async function main(): Promise<void> {
   const browser = await chromium.launch()
   const context = await browser.newContext()
   const page = await context.newPage()
 
   await page.goto('https://www.example.com/')
-  await page.screenshot({ path: 'src/capture.png' })
+  await page.screenshot({ path: 'dist/capture.png' })
 
   await browser.close()
 }
 
-main()
+main().catch(console.error)

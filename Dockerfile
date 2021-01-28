@@ -6,6 +6,6 @@ COPY ./package.json /app
 COPY ./package-lock.json /app
 RUN npm ci --production
 
-COPY ./src /app/src
+COPY ./dist /app/dist
 
 CMD ["npm", "start"]

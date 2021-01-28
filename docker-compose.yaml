@@ -3,4 +3,4 @@ services:
   playwright:
     build: .
     volumes:
-      - ./src:/app/src
+      - ./dist:/app/dist
